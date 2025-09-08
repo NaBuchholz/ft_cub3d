@@ -6,13 +6,15 @@
 /*   By: nbuchhol <nbuchhol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 10:36:14 by nbuchhol          #+#    #+#             */
-/*   Updated: 2025/09/02 20:33:33 by nbuchhol         ###   ########.fr       */
+/*   Updated: 2025/09/08 20:35:40 by nbuchhol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
 
 typedef struct s_list
 {
@@ -57,22 +59,24 @@ int		ft_putendl_fd_1(char *s, int fd);
 int		ft_putendl_fd_0(char *s, int fd);
 char	**ft_putendl_fd_n(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
 void	ft_lstadd_back(t_list **lst, t_list *new);
-
 void	ft_lstadd_front(t_list **lst, t_list *new);
-
 void	ft_lstclear(t_list **lst, void (*del)(void*));
-
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
-
 void	ft_lstiter(t_list *lst, void (*f)(void*));
-
 t_list	*ft_lstlast(t_list *lst);
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
-
 t_list	*ft_lstnew(void *content);
-
 int		ft_lstsize(t_list *lst);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif // END BUFFER_SIZE
+
+char	*ft_strchr_gnl(const char *s, int c);
+char	*ft_strjoin_gnl(const char *s1, const char *s2);
+void	*ft_calloc_gnl(size_t nmemb, size_t size);
+char	*ft_substr_gnl(const char *s, unsigned int start, size_t len);
+char	*get_next_line(int fd);
+
 #endif // END IF LIBFT_H

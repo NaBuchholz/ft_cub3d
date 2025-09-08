@@ -6,7 +6,7 @@
 #    By: nbuchhol <nbuchhol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/11 09:23:03 by nbuchhol          #+#    #+#              #
-#    Updated: 2025/09/02 20:37:53 by nbuchhol         ###   ########.fr        #
+#    Updated: 2025/09/08 20:32:06 by nbuchhol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,9 @@ SRC = ft_isalnum.c \
 	  ft_lstlast.c \
 	  ft_lstmap.c \
 	  ft_lstnew.c \
-	  ft_lstsize.c
+	  ft_lstsize.c \
+	  get_next_line_utils.c \
+	  get_next_line.c
 OBJ = ${SRC:.c=.o}
 RM = rm -f
 
